@@ -7,16 +7,13 @@
 from tp5ej01 import ingreso_entero, IngresoIncorrecto
 
 def tribonacci(numero):
-    primero = 1
-    segundo = 1
-    tercero = 1
     lista_trib = [1, 1, 1]
     if numero > 3:        
-        for i in range(numero-1):
+        for i in range(numero-3):
+            primero = lista_trib[-1]
+            segundo = lista_trib[-2]
+            tercero = lista_trib[-3]
             resultado = primero + segundo + tercero
-            primero = segundo
-            segundo = tercero
-            tercero = resultado
             lista_trib.append(resultado)
     elif numero == 3:
         return lista_trib
