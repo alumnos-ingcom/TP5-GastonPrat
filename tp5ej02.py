@@ -7,16 +7,15 @@
 from tp5ej01 import ingreso_entero, IngresoIncorrecto
 
 def fibonacci(numero):
-    primero = 0
-    segundo = 1
     lista_fib = [0, 1]
     if numero > 2:        
         for i in range(numero-1):
+            primero = lista_fib[-1]
+            segundo = lista_fib[-2]
             resultado = primero + segundo
-            primero = segundo
-            segundo = resultado
             lista_fib.append(resultado)
     elif numero == 2:
+        lista_fib.append(1)
         return lista_fib
     else:
         raise IngresoIncorrecto("se requiere un valor mayor a 2")
