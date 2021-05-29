@@ -6,6 +6,7 @@
 ################
 class IngresoIncorrecto(Exception):
     pass
+
 def ingreso_entero(mensaje):
     ingreso = input(mensaje + " #")
     try:
