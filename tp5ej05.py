@@ -7,10 +7,19 @@
 from tp5ej01 import IngresoIncorrecto
 
 def inversion_mayusculas(texto):
-    texto = str(texto)
-    texto_modificado = texto.swapcase()
+    texto_modificado = ""
+    for c in texto:
+        if c.isspace():
+            texto_modificado += " "
+        elif c.isupper():
+            texto_modificado += c.lower()
+        elif c.islower():
+            texto_modificado += c.upper()
+        else:
+            texto_modificado += c
     return texto_modificado
-    
+
+
 def prueba():
     print("Éste programa invertira las mayusculas y minusculas"
           " de la palabra o frase ingresada")
