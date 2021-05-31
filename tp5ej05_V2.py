@@ -11,12 +11,12 @@ def inversion_mayusculas(texto):
     for c in texto:
         if ord(c) == 32:
             texto_modificado += " "
-        elif ord(c) >= 65 and ord(c) <= 90:
+        elif ord(c) >= ord("A") and ord(c) <= ord("Z"):
             temp = ord(c)
             temp = temp + 32
             temp = chr(temp)
             texto_modificado += temp
-        elif ord(c) >= 97 and ord(c) <= 122:
+        elif ord(c) >= ord("a") and ord(c) <= ord("z"):
             temp = ord(c)
             temp = temp - 32
             temp = chr(temp)
