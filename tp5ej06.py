@@ -6,12 +6,12 @@
 ################
 from tp5ej01 import IngresoIncorrecto
 
-def parentesis_balanceado(cadena):
+def parentesis_balanceado(cadena, abre="[", cierra="]"):
     pila = []
     for c in cadena:
-        if c == "(" or c == "[" or c == "{":
+        if c == abre:
             pila.append(c)
-        elif c == ")" or c == "]" or c == "}":
+        elif c == cierra:
             if len(pila) == 0:
                 balanceado = False
             else:
