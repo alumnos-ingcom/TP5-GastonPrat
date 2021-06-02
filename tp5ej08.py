@@ -10,7 +10,6 @@ def ingreso_entero_restringido(mensaje,minimo = 1, maximo = 40):
     rot = ingreso_entero(mensaje)
     if (rot >= minimo and rot <= maximo):
         return rot
-        print(f"El numero ingresado {num} es correcto")
     else:
         raise IngresoIncorrecto("El nomero ingresado no pertenece "
                                 f"al rango entre {maximo} y {minimo}")
