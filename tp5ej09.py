@@ -30,7 +30,7 @@ def factoriones_funcion(limite):
 def prueba():
     tiempo = time()
     print("Este programa retornara una lista con los")
-    print("Factoriones menores a 1.999.999")
+    print("Factoriones menores a 1.499.999")
     factoriones = factoriones_funcion(limite=1499999)
     for item in factoriones:
         print(item)
