@@ -5,22 +5,17 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 from tp5ej01 import IngresoIncorrecto, ingreso_entero
-from random import randint
 
 def comparar_listas(lista1, lista2):
     resultado = True
     for item in lista1:
-        if item == lista2[0]:
-            resultado = True
-        elif item == lista2[1]:
-            resultado = True
-        elif item == lista2[2]:
-            resultado = True
-        elif item == lista2[3]:
-            resultado = True
-        else:
-            resultado = False
-            break
+        for c in lista2:
+            if item == c:
+                lista2.pop()
+    if len(lista2) == 0:
+        resultado = True
+    else:
+        resultado = False
     return resultado
 
 
@@ -28,13 +23,14 @@ def prueba():
     lista1 = []
     lista2 = []
     print("Este programa le dira si dos listas tienen los mismos valores")
-    print("Ingresar 4 valores de la primer lista:")
-    for i in range(4):
+    valores = ingreso_entero("¿cuantos valores tendra cada lista?")
+    print(f"Ingresar {valores} valores de la primer lista:")
+    for i in range(valores):
         numero = ingreso_entero("Escribaun número")
         lista1.append(numero)
     print("Este programa le dira si dos listas tienen los mismos valores")
-    print("Ingresar 4 valores de la segunda lista:")
-    for i in range(4):
+    print(f"Ingresar {valores} valores de la segunda lista:")
+    for i in range(valores):
         numero = ingreso_entero("Escribaun número")
         lista2.append(numero)
     resultado = comparar_listas(lista1, lista2)
