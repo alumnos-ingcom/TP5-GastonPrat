@@ -7,14 +7,13 @@
 from tp5ej01 import IngresoIncorrecto, ingreso_entero
 from random import randint
 
-def promedio_movil_simple(ventana):
-    if ventana > 10:
-        raise IngresoIncorrecto("Ingrese un valor de 10 o menor")
-    lista1 = []
+def promedio_movil_simple(ventana, lista1):
+    if ventana > len(lista1):
+        raise IngresoIncorrecto("La cantidad de valores a "
+                                "promediar debe ser igual o menor "
+                                "a la cantidad de valores en la lista")
     lista_promedio = []
-    for i in range (15):
-        lista1.append(randint(1, 100))
-    for n in range(16-ventana):
+    for n in range(len(lista1)-(ventana-1)):
         contador = n - 1
         sumador = 0
         vuelta = 0
@@ -29,8 +28,11 @@ def promedio_movil_simple(ventana):
 
 def prueba():
     print("Aquí se mostrara una lista con su promedio móvil")
-    ventana = ingreso_entero("¿Cuantos valores derea promediar?")
-    lista1, lista_promedio = promedio_movil_simple(ventana)
+    lista1 = []
+    for i in range (15):
+        lista1.append(randint(1, 100))
+    ventana = ingreso_entero("¿Cuantos valores desea promediar?")
+    lista1, lista_promedio = promedio_movil_simple(ventana, lista1)
     print("Valores a promediar:")
     print(lista1)
     print("Promedios moviles:")
