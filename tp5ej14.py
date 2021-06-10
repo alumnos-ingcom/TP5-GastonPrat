@@ -13,12 +13,12 @@ def numero_capicua(numero):
         capicua = True
     else:
         capicua = False
-    return capicua, numero
+    return capicua
     
 def prueba():
     print("Este programa le indicará si el numero ingresado es capicúa")
     numero = ingreso_entero("Ingrese otro Número Entero")
-    capicua, numero = numero_capicua(numero)
+    capicua = numero_capicua(numero)
     if capicua:
         print(f"El número {numero} es Capicúa")
     else:
