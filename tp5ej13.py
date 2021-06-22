@@ -12,7 +12,6 @@ def buscador_de_palabras(texto, busqueda, ignorar_mayusculas=True):
     n_texto = len(texto)
     n_busqueda = len(busqueda)
     n = 0
-    numero = 0
     caracter = 0
     comparador = []
     pila = []
